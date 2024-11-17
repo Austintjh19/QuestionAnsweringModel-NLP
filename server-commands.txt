@@ -1,0 +1,16 @@
+To connect to compute cluster: 
+ssh exxxxxxxx@xlog.comp.nus.edu.sg
+
+To transfer files to compute cluster: 
+scp -r Question\ Answering\ Project exxxxxxxx@xlog.comp.nus.edu.sg:~/
+
+To allocate GPU:
+salloc -G h100-47 -p normal --time 3:00:00      OR      salloc -G h100-96 -p normal --time 3:00:00
+
+To deallocate GPU:
+exit 
+
+To run model (example): 
+srun python3 model-v6.0.py --train --epochs 2 --batch_size 12 --lr 2e-5  --save_path "retro_reader_model.pth" --model_name "microsoft/deberta-base" --dataset "squad"
+srun python3 model-v6.0.py --model_path "retro_reader_model.pth" --output_file "predictions.json" --model_name "microsoft/deberta-base" --dataset "squad" --batch_size 12
+python evaluate-v2.0.py dev-v1.1.json predictions.json --out-file eval.json
