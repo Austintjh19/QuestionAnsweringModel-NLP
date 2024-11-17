@@ -43,12 +43,12 @@ The model was trained on **H100-96 GPU** on the **SoC cluster** with the followi
 
 **Squad-V1.1**  
 ```bash
-python model.py --train --save_path "retro_reader_model.pth" --epochs 2 --lr 2e-5 --dataset "squad"
+python model-final.py --train --save_path "retro_reader_model.pth" --epochs 2 --lr 2e-5 --dataset "squad"
 ```
 
 **Squad-V2.0**  
 ```bash
-python model.py --train --save_path "retro_reader_model.pth" --epochs 1 --lr 2e-5 --dataset "squad_v2"
+python model-final.py --train --save_path "retro_reader_model.pth" --epochs 1 --lr 2e-5 --dataset "squad_v2"
 ```
 
 ---
@@ -61,12 +61,12 @@ Testing generates a `predictions.json` file, which can be evaluated directly usi
 
 **Squad-V1.1**  
 ```bash
-python model.py --test --model_path "retro_reader_model.pth" --dataset "squad"
+python model-final.py --test --model_path "retro_reader_model.pth" --dataset "squad"
 ```
 
 **Squad-V2.0**  
 ```bash
-python model.py --test --model_path "retro_reader_model.pth" --dataset "squad_v2"
+python model-final.py --test --model_path "retro_reader_model.pth" --dataset "squad_v2"
 ```
 
 ---
@@ -79,12 +79,12 @@ The model predicts an answer for a given question and context.
 
 **Squad-V1.1**  
 ```bash
-python model.py --inference --question "What is the capital of France?" --context "Paris is the capital of France, known for its architecture including the Eiffel Tower." --model_path "retro_reader_model.pth" --dataset "squad"
+python model-final.py --inference --question "What is the capital of France?" --context "Paris is the capital of France, known for its architecture including the Eiffel Tower." --model_path "retro_reader_model.pth" --dataset "squad"
 ```
 
 **Squad-V2.0**  
 ```bash
-python model.py --inference --question "What is the capital of France?" --context "Paris is the capital of France, known for its architecture including the Eiffel Tower." --model_path "retro_reader_model.pth" --dataset "squad_v2"
+python model-final.py --inference --question "What is the capital of France?" --context "Paris is the capital of France, known for its architecture including the Eiffel Tower." --model_path "retro_reader_model.pth" --dataset "squad_v2"
 ```
 
 ---
